@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Dojo Survey</title>
+            {% load static %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        </head>
+        <body>
+            <h1>Info Submitted:</h1>
+            <dl class="row">
+                <dt class="col-sm-3">Name</dt>
+                <dd class="col-sm-9">{{ name_on_template }}<dd>
+
+                <dt class="col-sm-3">Dojo Location</dt>
+                <dd class="col-sm-9">{{ location_on_template }}</dd>
+
+                <dt class="col-sm-3">Favorite Language</dt>
+                <dd class="col-sm-9">{{ language_on_template }}</dd>
+
+                <dt class="col-sm-3">Gender</dt>
+                <dd class="col-sm-9">{{ gender_on_template }}</dd>
+
+                <dt class="col-sm-3">Vehicles</dt>
+                <dd class="col-sm-9">{{ vehicles_on_template }}</dd>
+
+                <dt class="col-sm-3">Comment</dt>
+                <dd class="col-sm-9">{{ comment_on_template }}</dd>
+            </dl>
+        </body>
+    </html>

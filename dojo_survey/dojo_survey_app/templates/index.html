@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Dojo Survey</title>
+            {% load static %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        </head>
+        <body>
+            <h1>Create a User</h1>
+            <form action='/result' method='post'>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input class="form-control" placeholder="Enter Name" type='text' id="name" name="name">
+                </div><br>
+                <div class="form-group">
+                    <label for="location">Dojo Location: </label>
+                    <select id="location" class="form-control" name="dojo_location">
+                        <option value="Chicago">Chicago</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Boston">Boston</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label for="language">Favorite Language: </label>
+                    <select id="language" class="form-control" name="favorite_language">
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="C#">C#</option>
+                        <option value="Ruby">Ruby</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-check" id="gender">
+                    <input class="form-check-input" type="radio" id="male" name="gender" value="Male">
+                    <label class="form-check-label" for="male">Male</label><br>
+                    <input class="form-check-input" type="radio" id="female" name="gender" value="Female">
+                    <label class="form-check-label" for="female">Female</label><br>
+                    <input class="form-check-input" type="radio" id="other" name="gender" value="Other">
+                    <label class="form-check-label" for="other">Other</label><br>
+                </div>
+                <div id="check" class="form-check">
+                    <input type="checkbox" class="form-check-input" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1" class="form-check-label"> I have a bike</label><br>
+                    <input type="checkbox" class="form-check-input" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="vehicle2" class="form-check-label"> I have a car</label><br>
+                    <input type="checkbox" class="form-check-input" id="vehicle3" name="vehicle3" value="Boat">
+                    <label for="vehicle3" class="form-check-label"> I have a boat</label><br>
+                </div><br>
+                <div class="form-group">
+                    <label for="comment">Comments</label>
+                    <textarea class="form-control" rows="4" id="comment" name="comment"></textarea><br>
+                </div>
+                <button type='submit' class="btn btn-primary">Create User</button>
+            </form>
+        </body>
+    </html>
